@@ -76,10 +76,10 @@ def main():
         # generate readme
         topic_readme_text = "# Repositories defined by: %s\n" % ", ".join(top_feature_names[0:3])
         topic_readme_text += '\n'
-        topic_readme_text += "These repositories are also defined by: %s\n" % ", ".join(top_feature_names[3:])
+        topic_readme_text += "also defined by the following keywords: %s\n" % ", ".join(top_feature_names[3:])
         topic_readme_text += '\n'
         for repo in [text_index_to_repo[i] for i in repo_indices_desc if model[i, topic_idx] > 0.1 * max_weight]:
-            topic_readme_text += '- [%s](%s)\n' % (repo.full_name, repo.url)
+            topic_readme_text += '- [%s](%s)\n' % (repo.full_name, repo.html_url)
             if repo.description:
                 topic_readme_text += '  %s\n' % repo.description
 
