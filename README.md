@@ -2,7 +2,7 @@
 
 This is a python script that fetches your GitHub stars and automatically extracts a given number of topics. It then generates a folder structure so you can easily browse through the topics in markdown.
 
-The result can be viewed in [example](example/).
+The result can be viewed in the [example folder](example/).
 
 ## Usage
 

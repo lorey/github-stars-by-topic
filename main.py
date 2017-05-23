@@ -1,17 +1,15 @@
+import datetime
 import getpass
 import logging
 import os
 import re
-from time import sleep
 
-import datetime
 import numpy
-import requests
-from bs4 import BeautifulSoup
 from github import Github
-from markdown import markdown
 from sklearn.decomposition import NMF
 from sklearn.feature_extraction.text import TfidfVectorizer
+
+import readmereader
 
 CACHE_PATH_READMES = 'cache'
 
@@ -39,8 +37,8 @@ def main():
     for repo in stars:
         user_login, repo_name = repo.full_name.split('/')  # use full name to infer user login
 
-        readme = fetch_readme(user_login, repo_name, repo.id)
-        readme_text = markdown_to_text(readme)
+        readme = readmereader.fetch_readme(user_login, repo_name, repo.id)
+        readme_text = readmereader.markdown_to_text(readme)
         repo_name_clean = re.sub(r'[^A-z]+', ' ', repo_name)
 
         full_repo_text = ' '.join([str(repo.description), readme_text, repo_name_clean])
@@ -115,57 +113,6 @@ def main():
         with open(topic_path + os.sep + 'README.md', 'w') as file:
             file.write(topic_readme_text)
         print()
-
-
-def fetch_readme(user_login, repo_name, repo_id):
-    cache_key = str(repo_id)
-    cache_file = CACHE_PATH_READMES + os.sep + cache_key
-
-    # check if file is cached
-    if os.path.isfile(cache_file):
-        with open(cache_file, 'r') as file:
-            return file.read()
-
-    # create cache folder
-    if not os.path.isdir(CACHE_PATH_READMES):
-        os.mkdir(CACHE_PATH_READMES)
-
-    potential_readme_names = ['README.md', 'readme.md', 'readme.txt', 'README.rst', 'README.markdown', 'README']
-    for readme_name in potential_readme_names:
-        sleep(1)  # don't hassle GitHub
-        url = 'https://raw.githubusercontent.com/%s/%s/master/%s' % (user_login, repo_name, readme_name)
-        response = requests.get(url)
-        if response.status_code == 200:
-            # write to cache
-            try:
-                readme_content = response.content.decode('utf-8')
-            except UnicodeDecodeError:
-                logging.exception('not unicode for: %s/%s' % (user_login, repo_name))
-                return ''
-
-            with open(cache_file, 'w') as file:
-                file.write(readme_content)
-            return readme_content
-        elif response.status_code != 404:
-            raise RuntimeError(response.status_code)
-
-    logging.warning('no readme found for: %s/%s' % (user_login, repo_name))
-    return ''
-
-
-def markdown_to_text(markdown_string):
-    # md -> html -> text since BeautifulSoup can extract text cleanly
-    html = markdown(markdown_string)
-
-    # remove code snippets
-    html = re.sub(r'<pre>(.*?)</pre>', ' ', html)
-    html = re.sub(r'<code>(.*?)</code >', ' ', html)
-
-    # extract text
-    soup = BeautifulSoup(html)
-    text = ''.join(soup.findAll(text=True))
-
-    return text
 
 if __name__ == '__main__':
     main()
