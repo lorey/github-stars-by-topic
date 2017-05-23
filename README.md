@@ -6,7 +6,7 @@ The result can be viewed in [example](example/).
 
 ## Usage
 
-Just run `python3 main.py` on the command line. It will ask you for your GitHub credentials to fetch your stars and then do it's job. The result will be a folder in the main directory that you can copy or save in a GitHub repository for others to browse.
+Just run `python3 main.py` on the command line. It will ask you for your GitHub credentials to fetch your stars and then do its job. The result will be a folder in the main directory that you can copy or save in a GitHub repository for others to browse.
 
 ## Dependencies
 

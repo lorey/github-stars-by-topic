@@ -44,8 +44,8 @@ def main():
         repo_name_clean = re.sub(r'[^A-z]+', ' ', repo_name)
 
         full_repo_text = ' '.join([str(repo.description), readme_text, repo_name_clean])
-        readmes.append(full_repo_text)
         readme_to_repo[len(readmes)] = repo
+        readmes.append(full_repo_text)
 
     vectorizer = TfidfVectorizer(max_df=0.2, min_df=1, max_features=1000, stop_words='english', norm='l2',
                                  sublinear_tf=True)
@@ -53,6 +53,30 @@ def main():
 
     decomposition = NMF(n_components=number_of_topics)
     model = decomposition.fit_transform(vectors)
+
+    # generate overall readme
+    index_readme_text = '# %s\'s stars by topic\n' % username
+    index_readme_text += '\n'
+    index_readme_text += 'This is a list of topics contained in the stars of %s.' % username
+    index_readme_text += '\n'
+
+    topic_list = []
+    for topic_idx, topic in enumerate(decomposition.components_):
+        top_feature_indices = topic.argsort()[:-11:-1]
+        top_feature_names = [vectorizer.get_feature_names()[i] for i in top_feature_indices]
+
+        topic_name = ", ".join(top_feature_names[0:3])
+
+        topic_directory_name = "-".join(top_feature_names[0:3])
+        topic_link = topic_directory_name + os.sep + 'README.md'
+
+        topic_list_item = '- [%s](%s)' % (topic_name, topic_link)
+        topic_list.append(topic_list_item)
+
+    topic_list.sort()  # sort alphabetically
+    index_readme_text += '\n'.join(topic_list)
+    with open(output_directory + os.sep + 'README.md', 'w') as index_readme_file:
+        index_readme_file.write(index_readme_text)
 
     print()
     for topic_idx, topic in enumerate(decomposition.components_):
@@ -78,18 +102,18 @@ def main():
         os.mkdir(topic_path)
 
         # generate readme
-        readme_content = "# Repositories defined by: %s\n" % ", ".join(top_feature_names[0:3])
-        readme_content += '\n'
-        readme_content += "These repositories are also defined by: %s\n" % ", ".join(top_feature_names[3:])
-        readme_content += '\n'
+        topic_readme_text = "# Repositories defined by: %s\n" % ", ".join(top_feature_names[0:3])
+        topic_readme_text += '\n'
+        topic_readme_text += "These repositories are also defined by: %s\n" % ", ".join(top_feature_names[3:])
+        topic_readme_text += '\n'
         for repo in [readme_to_repo[i] for i in repo_indices_desc if model[i, topic_idx] > 0.1 * max_weight]:
-            readme_content += '- [%s](%s)\n' % (repo.full_name, repo.url)
+            topic_readme_text += '- [%s](%s)\n' % (repo.full_name, repo.url)
             if repo.description:
-                readme_content += '  %s\n' % repo.description
+                topic_readme_text += '  %s\n' % repo.description
 
         # write readme
         with open(topic_path + os.sep + 'README.md', 'w') as file:
-            file.write(readme_content)
+            file.write(topic_readme_text)
         print()
 
 
