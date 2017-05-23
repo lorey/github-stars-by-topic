@@ -36,7 +36,7 @@ def main():
     logging.info('extracts texts for repos (readmes, etc.)')
     texts, text_index_to_repo = extract_texts_from_repos(repos)
 
-    vectorizer = TfidfVectorizer(max_df=0.2, min_df=1, max_features=1000, stop_words='english', norm='l2',
+    vectorizer = TfidfVectorizer(max_df=0.2, min_df=2, max_features=1000, stop_words='english', norm='l2',
                                  sublinear_tf=True)
     vectors = vectorizer.fit_transform(texts)
     feature_names = vectorizer.get_feature_names()
@@ -134,7 +134,15 @@ def get_text_for_repo(repo):
 
     repo_name_clean = re.sub(r'[^A-z]+', ' ', repo_name)
 
-    return ' '.join([str(repo.description), readme_text, repo_name_clean])
+    texts = [
+        str(repo.description),
+        str(repo.description),
+        str(repo.description),  # use description 3x to increase weight
+        str(repo.language),
+        readme_text,
+        repo_name_clean
+    ]
+    return ' '.join(texts)
 
 
 if __name__ == '__main__':

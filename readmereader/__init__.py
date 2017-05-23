@@ -23,9 +23,17 @@ def fetch_readme(user_login, repo_name, repo_id):
     if not os.path.isdir(CACHE_PATH_READMES):
         os.mkdir(CACHE_PATH_READMES)
 
-    potential_readme_names = ['README.md', 'readme.md', 'readme.txt', 'README.rst', 'README.markdown', 'README']
+    potential_readme_names = [
+        'README.md',  # list should end here
+        'readme.md',
+        'Readme.md',  # WHY?
+        'readme.txt',
+        'README.rst',  # todo cannot actually parse this
+        'README.markdown',
+        'README'
+    ]
+
     for readme_name in potential_readme_names:
-        sleep(1)  # don't hassle GitHub
         url = 'https://raw.githubusercontent.com/%s/%s/master/%s' % (user_login, repo_name, readme_name)
         response = requests.get(url)
         if response.status_code == 200:

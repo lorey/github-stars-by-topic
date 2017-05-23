@@ -1,6 +1,6 @@
-# Your GitHub stars sorted by topic
+# Your GitHub stars sorted by topic/category
 
-This is a python script that fetches your GitHub stars and automatically extracts a given number of topics. It then generates a folder structure so you can easily browse through the topics in markdown.
+This is a python script that fetches your GitHub stars and uses Machine Learning (buzzword, check) to extract a given number of topics. It then generates a folder structure so you can easily browse through the topics in markdown.
 
 The result can be viewed in the [example folder](example/).
 
