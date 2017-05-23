@@ -23,12 +23,15 @@ def main():
     g = Github(username, password)
     g.per_page = 250  # maximum allowed value
 
+    target_username = input('User to analyze:')
+
     # setup output directory
-    output_directory = datetime.datetime.now().strftime("%Y-%m-%d_%H%M") + ' %s - stars by topic' % username
+    output_directory = datetime.datetime.now().strftime("%Y-%m-%d_%H%M") + ' %s - stars by topic' % target_username
     os.mkdir(output_directory)
 
     logging.info('fetching stars')
-    repos = g.get_user().get_starred()
+    target_user = g.get_user(target_username)
+    repos = target_user.get_starred()
 
     logging.info('extracts texts for repos (readmes, etc.)')
     texts, text_index_to_repo = extract_texts_from_repos(repos)
@@ -42,7 +45,7 @@ def main():
     model = decomposition.fit_transform(vectors)
 
     # generate overview readme
-    overview_readme_text = generate_overview_readme(decomposition, feature_names, username)
+    overview_readme_text = generate_overview_readme(decomposition, feature_names, target_username)
     with open(output_directory + os.sep + 'README.md', 'w') as overview_readme_file:
         overview_readme_file.write(overview_readme_text)
 
