@@ -23,7 +23,7 @@ def main():
     password = getpass.getpass('Your Password (not stored in any way):')
 
     g = Github(username, password)
-    g.per_page = 250
+    g.per_page = 250  # maximum allowed value
 
     # setup output directory
     output_directory = datetime.datetime.now().strftime("%Y-%m-%d_%H%M") + ' %s - stars by topic' % username
@@ -37,16 +37,18 @@ def main():
     logging.info('fetching stars')
     stars = g.get_user().get_starred()
     for repo in stars:
-        user_login, repo_name = repo.full_name.split('/')
+        user_login, repo_name = repo.full_name.split('/')  # use full name to infer user login
 
         readme = fetch_readme(user_login, repo_name, repo.id)
         readme_text = markdown_to_text(readme)
         repo_name_clean = re.sub(r'[^A-z]+', ' ', repo_name)
 
+        full_repo_text = ' '.join([str(repo.description), readme_text, repo_name_clean])
+        readmes.append(full_repo_text)
         readme_to_repo[len(readmes)] = repo
-        readmes.append(' '.join([str(repo.description), readme_text, repo_name_clean]))
 
-    vectorizer = TfidfVectorizer(max_df=0.2, min_df=1, max_features=1000, stop_words='english', norm='l2', sublinear_tf=True)
+    vectorizer = TfidfVectorizer(max_df=0.2, min_df=1, max_features=1000, stop_words='english', norm='l2',
+                                 sublinear_tf=True)
     vectors = vectorizer.fit_transform(readmes)
 
     decomposition = NMF(n_components=number_of_topics)
@@ -63,16 +65,19 @@ def main():
         print("Topic #%d:" % topic_idx)
         print(", ".join(top_feature_names))
 
+        # output repos
         max_weight = model[repo_indices_desc[0], topic_idx]
         for i in repo_indices_desc:
             weight = model[i, topic_idx]
             if weight > 0.05 * max_weight:
                 print(readme_to_repo[i], weight)
 
+        # create topic directory
         topic_directory_name = "-".join(top_feature_names[0:3])
         topic_path = output_directory + os.sep + topic_directory_name
         os.mkdir(topic_path)
 
+        # generate readme
         readme_content = "# Repositories defined by: %s\n" % ", ".join(top_feature_names[0:3])
         readme_content += '\n'
         readme_content += "These repositories are also defined by: %s\n" % ", ".join(top_feature_names[3:])
@@ -82,6 +87,7 @@ def main():
             if repo.description:
                 readme_content += '  %s\n' % repo.description
 
+        # write readme
         with open(topic_path + os.sep + 'README.md', 'w') as file:
             file.write(readme_content)
         print()
@@ -91,17 +97,19 @@ def fetch_readme(user_login, repo_name, repo_id):
     cache_key = str(repo_id)
     cache_file = CACHE_PATH_READMES + os.sep + cache_key
 
+    # check if file is cached
     if os.path.isfile(cache_file):
         with open(cache_file, 'r') as file:
             return file.read()
 
+    # create cache folder
     if not os.path.isdir(CACHE_PATH_READMES):
         os.mkdir(CACHE_PATH_READMES)
 
-    names = ['README.md', 'readme.md', 'readme.txt', 'README.rst', 'README.markdown', 'README']
-    for name in names:
-        sleep(1)
-        url = 'https://raw.githubusercontent.com/%s/%s/master/%s' % (user_login, repo_name, name)
+    potential_readme_names = ['README.md', 'readme.md', 'readme.txt', 'README.rst', 'README.markdown', 'README']
+    for readme_name in potential_readme_names:
+        sleep(1)  # don't hassle GitHub
+        url = 'https://raw.githubusercontent.com/%s/%s/master/%s' % (user_login, repo_name, readme_name)
         response = requests.get(url)
         if response.status_code == 200:
             # write to cache
@@ -122,14 +130,17 @@ def fetch_readme(user_login, repo_name, repo_id):
 
 
 def markdown_to_text(markdown_string):
+    # md -> html -> text since BeautifulSoup can extract text cleanly
     html = markdown(markdown_string)
 
     # remove code snippets
     html = re.sub(r'<pre>(.*?)</pre>', ' ', html)
     html = re.sub(r'<code>(.*?)</code >', ' ', html)
 
+    # extract text
     soup = BeautifulSoup(html)
     text = ''.join(soup.findAll(text=True))
+
     return text
 
 if __name__ == '__main__':
