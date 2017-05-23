@@ -10,7 +10,8 @@ Just run `python3 main.py` on the command line. It will ask you for your GitHub 
 
 ## Dependencies
 
-- `PyGithub` ([install](http://pygithub.readthedocs.io/en/latest/introduction.html#download-and-install))to fetch your stars
-- `requests` ((install)[http://docs.python-requests.org/en/master/user/install/])to fetch readmes from github
-- `Markdown` ((install)[http://pythonhosted.org/Markdown/install.html])and `BeautifulSoup` ([install](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup)) to extract text from markdowns
-- `scikit-learn` ([install](http://scikit-learn.org/stable/install.html)) and the [scipy stack](https://www.scipy.org/install.html#installing-via-pip) for the machine learning algorithms (topic extraction, tf-idf vectors, etc.)
+- `PyGithub` to fetch your stars. [install](http://pygithub.readthedocs.io/en/latest/introduction.html#download-and-install)
+- `requests` to fetch readmes from github. [install](http://docs.python-requests.org/en/master/user/install/)
+- `Markdown` to generate html from markdowns. [install](http://pythonhosted.org/Markdown/install.html)
+- `BeautifulSoup`: extract text from generated html (easiest method to get plain text from markdown). [install](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup)
+- `scikit-learn` and the [scipy stack](https://www.scipy.org/install.html#installing-via-pip) for the machine learning algorithms (topic extraction, tf-idf vectors, etc.). [install](http://scikit-learn.org/stable/install.html)
