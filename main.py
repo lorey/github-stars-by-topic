@@ -5,7 +5,7 @@ import os
 import re
 
 import numpy
-from github import Github
+import github
 from sklearn.decomposition import NMF
 from sklearn.feature_extraction.text import TfidfVectorizer
 
@@ -20,7 +20,7 @@ def main():
     username = input('Your Github Username: ')
     password = getpass.getpass('Your Password (not stored in any way): ')
 
-    g = Github(username, password)
+    g = github.Github(username, password)
     g.per_page = 250  # maximum allowed value
 
     target_username = input('User to analyze: ')
@@ -32,12 +32,17 @@ def main():
         os.mkdir(output_directory)
 
     logging.info('fetching stars')
-    target_user = g.get_user(target_username)
-    repos = target_user.get_starred()
+    try:
+        target_user = g.get_user(target_username)
+        repos = target_user.get_starred()
+    except github.GithubException as e:
+        print('Error: ' + e.data['message'])
+        return -1
 
     logging.info('extracts texts for repos (readmes, etc.)')
     texts, text_index_to_repo = extract_texts_from_repos(repos)
 
+    # Classifying
     vectorizer = TfidfVectorizer(max_df=0.2, min_df=2, max_features=1000, stop_words='english', norm='l2',
                                  sublinear_tf=True)
     vectors = vectorizer.fit_transform(texts)
