@@ -1,5 +1,6 @@
 import os
 import re
+import github
 from time import sleep
 
 import logging
@@ -10,8 +11,8 @@ from markdown import markdown
 from main import CACHE_PATH_READMES
 
 
-def fetch_readme(user_login, repo_name, repo_id):
-    cache_key = str(repo_id)
+def fetch_readme(repo):
+    cache_key = str(repo.id)
     cache_file = CACHE_PATH_READMES + os.sep + cache_key
 
     # check if file is cached
@@ -23,35 +24,14 @@ def fetch_readme(user_login, repo_name, repo_id):
     if not os.path.isdir(CACHE_PATH_READMES):
         os.mkdir(CACHE_PATH_READMES)
 
-    potential_readme_names = [
-        'README.md',  # list should end here
-        'readme.md',
-        'Readme.md',  # WHY?
-        'readme.txt',
-        'README.rst',  # todo cannot actually parse this
-        'README.markdown',
-        'README'
-    ]
+    try:
+        readme = repo.get_readme()
+    except github.GithubException:
+        # Readme wasn't found
+        logging.warning('no readme found for: ' + repo.full_name)
+        return ''
 
-    for readme_name in potential_readme_names:
-        url = 'https://raw.githubusercontent.com/%s/%s/master/%s' % (user_login, repo_name, readme_name)
-        response = requests.get(url)
-        if response.status_code == 200:
-            # write to cache
-            try:
-                readme_content = response.content.decode('utf-8')
-            except UnicodeDecodeError:
-                logging.exception('not unicode for: %s/%s' % (user_login, repo_name))
-                return ''
-
-            with open(cache_file, 'w') as file:
-                file.write(readme_content)
-            return readme_content
-        elif response.status_code != 404:
-            raise RuntimeError(response.status_code)
-
-    logging.warning('no readme found for: %s/%s' % (user_login, repo_name))
-    return ''
+    return readme.content
 
 
 def markdown_to_text(markdown_string):
