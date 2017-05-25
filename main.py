@@ -25,11 +25,6 @@ def main():
 
     target_username = input('User to analyze: ')
 
-    # setup output directory
-    output_directory = 'topics_' + target_username
-    if(not os.path.isdir(output_directory)):
-        output_directory = 'topics_' + target_username
-        os.mkdir(output_directory)
 
     logging.info('fetching stars')
     try:
@@ -38,6 +33,11 @@ def main():
     except github.GithubException as e:
         print('Error: ' + e.data['message'])
         return -1
+
+    # setup output directory
+    timestamp = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M')
+    output_directory = 'topics_%s_%s' % (target_username, timestamp)
+    os.mkdir(output_directory)
 
     logging.info('extracts texts for repos (readmes, etc.)')
     texts, text_index_to_repo = extract_texts_from_repos(repos)
@@ -53,7 +53,6 @@ def main():
 
     # generate overview readme
     overview_readme_text = generate_overview_readme(decomposition, feature_names, target_username)
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H%M%S")
     with open(output_directory + os.sep + target_username + '_' + timestamp + '.md', 'w') as overview_readme_file:
         overview_readme_file.write(overview_readme_text)
 
