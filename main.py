@@ -25,7 +25,6 @@ def main():
 
     target_username = input('User to analyze: ')
 
-
     logging.info('fetching stars')
     try:
         target_user = g.get_user(target_username)
@@ -134,9 +133,11 @@ def extract_texts_from_repos(repos):
 
 
 def get_text_for_repo(repo):
-    user_login, repo_name = repo.full_name.split('/')  # use full name to infer user login
+    print(repo.full_name)
+    repo_login, repo_name = repo.full_name.split('/')  # use full name to infer user login
 
-    readme = readmereader.fetch_readme(user_login, repo_name, repo.id)
+    # readme = readmereader.fetch_readme(user_login, repo_name, repo.id)
+    readme = readmereader.fetch_readme(repo)
     readme_text = readmereader.markdown_to_text(readme)
 
     repo_name_clean = re.sub(r'[^A-z]+', ' ', repo_name)
