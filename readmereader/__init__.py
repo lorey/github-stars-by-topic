@@ -4,7 +4,6 @@ import github
 from time import sleep
 
 import logging
-import requests
 from bs4 import BeautifulSoup
 from markdown import markdown
 
