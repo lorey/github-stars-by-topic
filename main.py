@@ -17,17 +17,19 @@ CACHE_PATH_READMES = 'cache'
 def main():
     number_of_topics = 25
 
-    username = input('Your Github Username:')
-    password = getpass.getpass('Your Password (not stored in any way):')
+    username = input('Your Github Username: ')
+    password = getpass.getpass('Your Password (not stored in any way): ')
 
     g = Github(username, password)
     g.per_page = 250  # maximum allowed value
 
-    target_username = input('User to analyze:')
+    target_username = input('User to analyze: ')
 
     # setup output directory
-    output_directory = datetime.datetime.now().strftime("%Y-%m-%d_%H%M") + ' %s - stars by topic' % target_username
-    os.mkdir(output_directory)
+    output_directory = 'topics_' + target_username
+    if(not os.path.isdir(output_directory)):
+        output_directory = 'topics_' + target_username
+        os.mkdir(output_directory)
 
     logging.info('fetching stars')
     target_user = g.get_user(target_username)
@@ -46,7 +48,8 @@ def main():
 
     # generate overview readme
     overview_readme_text = generate_overview_readme(decomposition, feature_names, target_username)
-    with open(output_directory + os.sep + 'README.md', 'w') as overview_readme_file:
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H%M%S")
+    with open(output_directory + os.sep + target_username + '_' + timestamp + '.md', 'w') as overview_readme_file:
         overview_readme_file.write(overview_readme_text)
 
     # generate topic folders and readmes
@@ -92,7 +95,7 @@ def main():
 def generate_overview_readme(decomposition, feature_names, username):
     text = '# %s\'s stars by topic\n' % username
     text += '\n'
-    text += 'This is a list of topics contained in the stars of %s.' % username
+    text += 'This is a list of topics covered by the starred repositories of %s.' % username
     text += '\n'
 
     topic_list = []
