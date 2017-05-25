@@ -1,0 +1,7 @@
+__pycache__/
+
+# Cached github readmes
+cache/
+
+# Output folders of program
+topics_*/
