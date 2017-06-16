@@ -26,12 +26,8 @@ def main():
     target_username = input('User to analyze: ')
 
     logging.info('fetching stars')
-    try:
-        target_user = g.get_user(target_username)
-        repos = target_user.get_starred()
-    except github.GithubException as e:
-        print('Error: ' + e.data['message'])
-        return -1
+    target_user = g.get_user(target_username)
+    repos = target_user.get_starred()
 
     # setup output directory
     timestamp = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M')
@@ -51,9 +47,12 @@ def main():
     model = decomposition.fit_transform(vectors)
 
     # generate overview readme
-    overview_readme_text = generate_overview_readme(decomposition, feature_names, target_username)
-    with open(output_directory + os.sep + target_username + '_' + timestamp + '.md', 'w') as overview_readme_file:
-        overview_readme_file.write(overview_readme_text)
+    overview_text = generate_overview_readme(decomposition, feature_names, target_username)
+
+    # README to get displayed by github when opening directory
+    overview_filename = output_directory + os.sep + 'README.md'
+    with open(overview_filename, 'w') as overview_file:
+        overview_file.write(overview_text)
 
     # generate topic folders and readmes
     print()
@@ -133,7 +132,6 @@ def extract_texts_from_repos(repos):
 
 
 def get_text_for_repo(repo):
-    print(repo.full_name)
     repo_login, repo_name = repo.full_name.split('/')  # use full name to infer user login
 
     # readme = readmereader.fetch_readme(user_login, repo_name, repo.id)
