@@ -12,7 +12,7 @@ Just run `python3 main.py` on the command line. It will ask you for your GitHub 
 
 This section will give you a brief overview how the tool works.
 
-Before starting to work, the tool asks you for your GitHub credentials to be able to use the API with 5000 instead of 60 requests per hour. It then starts to fetch the stars of the targeted user. This results in a list of repositories the user has starred.
+Before starting to work, the tool asks you for your GitHub credentials to be able to use the API with [5000 instead of 60 requests per hour](https://developer.github.com/v3/#rate-limiting). It then starts to fetch the stars of the targeted user. This results in a list of repositories the user has starred.
 
 ```
 starred_repos = [
@@ -22,7 +22,7 @@ starred_repos = [
 ]
 ```
 
-To apply the topic extraction later, we need to find a text describing the repo. To do this, for each starred repo the title, description, and README file is fetched and used as a text. This generates a list of texts for each starred repository. The example below shows how this would look for my bot Totally not Jarvis and Laravel, the PHP framework.
+To apply the topic extraction later, we need to find a text describing the repo. To do this, for each starred repo the title, description, and README file is fetched and used as a text. This generates a list of texts for each starred repository. The example below shows how this would look for [my personal assistant bot called Totally not Jarvis](https://github.com/lorey/totally-not-jarvis) and [Laravel, the PHP framework](https://github.com/laravel/laravel).
 
 ```
 readmes = [
@@ -32,7 +32,7 @@ readmes = [
 ]
 ```
 
-We then apply Term Frequency Inverse Document Frequency (tf-idf) pre-processing on the list to extract relevant keywords for each repo. This results in a list of repos with corresponding tf-idf weights. A high tf-idf value means the term is very relevant for this document, a low value means the term is irrelevant (i.e. not existing or too common). The benefit of tf-idf values over plain term frequencies is that it results in low weights for terms that are very common. Or how Wikipedia puts it:
+We then apply [Term Frequency Inverse Document Frequency (tf-idf)](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) pre-processing on the list to extract relevant keywords for each repo. This results in a list of repos with corresponding tf-idf weights. A high tf-idf value means the term is very relevant for this document, a low value means the term is irrelevant (i.e. not existing or too common). The benefit of tf-idf values over plain term frequencies is that it results in low weights for terms that are very common. Or how [Wikipedia](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) puts it:
 
 > The tf-idf value increases proportionally to the number of times a word appears in the document, but is often offset by the frequency of the word in the corpus, which helps to adjust for the fact that some words appear more frequently in general.
 
@@ -43,7 +43,7 @@ We then apply Term Frequency Inverse Document Frequency (tf-idf) pre-processing 
 | Totally not Jarvis | 0   | 0.6       | 0.8 | 0.1 |
 
 
-Afterwards, we apply Non-Negative Matrix Factorization (NMF) to extract the underlying topics defined by their most-relevant keywords. This gives us two results. Firstly, a list of topics defined by their most-important keywords (high value means more relevance for the topic):
+Afterwards, we apply [Non-Negative Matrix Factorization (NMF)](https://en.wikipedia.org/wiki/Non-negative_matrix_factorization) to extract the underlying topics defined by their most-relevant keywords. This gives us two results. Firstly, a list of topics defined by their most-important keywords (high value means more relevance for the topic):
 
 |         | php | framework | bot | web |
 |---------|-----|-----------|-----|-----|
