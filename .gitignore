@@ -5,3 +5,5 @@ cache/
 
 # Output folders of program
 topics_*/
+
+.python-version
