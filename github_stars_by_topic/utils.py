@@ -1,8 +1,18 @@
-from . import readmereader
-import re
-import os
+from __future__ import annotations
 
-def generate_overview_readme(decomposition, feature_names: list[str], username: str):
+import os
+import re
+
+from github.PaginatedList import PaginatedList
+from github.Repository import Repository
+from sklearn.decomposition import NMF  # type: ignore[import]
+
+from .readmereader import fetch_readme, markdown_to_text
+
+
+def generate_overview_readme(
+    decomposition: NMF, feature_names: list[str], username: str
+) -> str:
     text = "# %s's stars by topic\n" % username
     text += "\n"
     text += (
@@ -29,9 +39,9 @@ def generate_overview_readme(decomposition, feature_names: list[str], username: 
     return text
 
 
-def extract_texts_from_repos(repos):
-    readmes = []
-    readme_to_repo = {}  # maps readme index to repo
+def extract_texts_from_repos(repos: PaginatedList[Repository]) -> tuple[list[str], dict[int, Repository]]:
+    readmes: list[str] = []
+    readme_to_repo: dict[int, Repository] = {}  # maps readme index to repo
 
     for repo in repos:
         full_repo_text = get_text_for_repo(repo)
@@ -41,14 +51,14 @@ def extract_texts_from_repos(repos):
     return readmes, readme_to_repo
 
 
-def get_text_for_repo(repo):
+def get_text_for_repo(repo: Repository) -> str:
     repo_login, repo_name = repo.full_name.split(
         "/"
     )  # use full name to infer user login
 
-    # readme = readmereader.fetch_readme(user_login, repo_name, repo.id)
-    readme = readmereader.fetch_readme(repo)
-    readme_text = readmereader.markdown_to_text(readme)
+    # readme = fetch_readme(user_login, repo_name, repo.id)
+    readme = fetch_readme(repo)
+    readme_text = markdown_to_text(readme)
 
     repo_name_clean = re.sub(r"[^A-z]+", " ", repo_name)
 

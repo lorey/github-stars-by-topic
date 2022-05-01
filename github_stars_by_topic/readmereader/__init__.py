@@ -1,14 +1,18 @@
+from __future__ import annotations
+
 import logging
 import os
 import re
 
-import github
 from bs4 import BeautifulSoup
-from .. import CACHE_PATH_READMES
+from github import GithubException
+from github.Repository import Repository
 from markdown import markdown
 
+from .. import CACHE_PATH_READMES
 
-def fetch_readme(repo) -> str:
+
+def fetch_readme(repo: Repository) -> str:
     cache_key = str(repo.id)
     cache_file = CACHE_PATH_READMES + os.sep + cache_key
 
@@ -23,12 +27,12 @@ def fetch_readme(repo) -> str:
 
     try:
         readme = repo.get_readme()
-    except github.GithubException:
+    except GithubException:
         # Readme wasn't found
         logging.warning("no readme found for: " + repo.full_name)
         return ""
 
-    return readme.content
+    return str(readme.content)
 
 
 def markdown_to_text(markdown_string: str) -> str:

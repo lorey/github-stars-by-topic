@@ -1,15 +1,16 @@
+from __future__ import annotations
+
 import datetime
 import getpass
 import logging
 import os
 
-from .utils import extract_texts_from_repos, generate_overview_readme
-
 import github
-import numpy
-from sklearn.decomposition import NMF
-from sklearn.feature_extraction.text import TfidfVectorizer
+from numpy import flip
+from sklearn.decomposition import NMF  # type: ignore[import]
+from sklearn.feature_extraction.text import TfidfVectorizer  # type: ignore[import]
 
+from .utils import extract_texts_from_repos, generate_overview_readme
 
 
 def main() -> None:
@@ -47,6 +48,7 @@ def main() -> None:
     vectors = vectorizer.fit_transform(texts)
     feature_names = vectorizer.get_feature_names()
 
+    # Non-Negative Matrix Factorization
     decomposition = NMF(n_components=number_of_topics)
     model = decomposition.fit_transform(vectors)
 
@@ -67,7 +69,7 @@ def main() -> None:
         top_feature_names = [feature_names[i] for i in top_feature_indices]
 
         repo_indices_asc = model[:, topic_idx].argsort()
-        repo_indices_desc = numpy.flip(repo_indices_asc, 0)
+        repo_indices_desc = flip(repo_indices_asc, 0)  # type: ignore[no-untyped-call]
 
         print("Topic #%d:" % topic_idx)
         print(", ".join(top_feature_names))
