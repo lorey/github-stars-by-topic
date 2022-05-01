@@ -5,6 +5,7 @@ import datetime
 import getpass
 import logging
 import os
+import sys
 from shutil import get_terminal_size
 
 from github import Github
@@ -61,7 +62,7 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def main() -> None:
+def _main() -> None:
     args = parse_args()
     a_user, a_pass, a_target = args.username, args.password, args.target_username
     number_of_topics = 25
@@ -162,6 +163,13 @@ def main() -> None:
         with open(topic_path + os.sep + "README.md", "w") as file:
             file.write(topic_readme_text)
         print()
+
+
+def main() -> None:
+    try:
+        _main()
+    except KeyboardInterrupt:
+        sys.exit(1)
 
 
 if __name__ == "__main__":
