@@ -6,7 +6,11 @@ The result can be viewed in the [example folder](example/).
 
 ## Usage
 
-Just run `python3 main.py` on the command line. It will ask you for your GitHub credentials to fetch your stars and then do its job. The result will be a folder in the main directory that you can copy or save in a GitHub repository for others to browse.
+Install: `$ pip install git+https://github.com/lorey/github-stars-by-topic`
+
+Then just run: `$ ghst`
+
+It will ask you for your GitHub credentials to fetch your stars and then do its job. The result will be a folder in the main directory that you can copy or save in a GitHub repository for others to browse.
 
 ## How it works
 
@@ -14,7 +18,7 @@ This section will give you a brief overview how the tool works.
 
 Before starting to work, the tool asks you for your GitHub credentials to be able to use the API with [5000 instead of 60 requests per hour](https://developer.github.com/v3/#rate-limiting). It then starts to fetch the stars of the targeted user. This results in a list of repositories the user has starred.
 
-```
+```python
 starred_repos = [
     Repo(name='Totally not Jarvis'),
     Repo(name='Laravel'),
@@ -24,7 +28,7 @@ starred_repos = [
 
 To apply the topic extraction later, we need to find a text describing the repo. To do this, for each starred repo the title, description, and README file is fetched and used as a text. This generates a list of texts for each starred repository. The example below shows how this would look for [my personal assistant bot called Totally not Jarvis](https://github.com/lorey/totally-not-jarvis) and [Laravel, the PHP framework](https://github.com/laravel/laravel).
 
-```
+```python
 readmes = [
     'totally not jarvis my personal assistant totally not jarvis a personal...',
     'laravel a php framework for web artisans about laravel laravel is a web...',
@@ -64,11 +68,3 @@ This data is then used to create folders named after the most relevant keywords.
 
 Further reading:
 - [example for topic extraction in the scikit-learn documentation](http://scikit-learn.org/stable/auto_examples/applications/topics_extraction_with_nmf_lda.html#sphx-glr-auto-examples-applications-topics-extraction-with-nmf-lda-py).
-
-## Dependencies
-
-- `PyGithub` to fetch your stars. [install](http://pygithub.readthedocs.io/en/latest/introduction.html#download-and-install)
-- `requests` to fetch readmes from github. [install](http://docs.python-requests.org/en/master/user/install/)
-- `Markdown` to generate html from markdowns. [install](http://pythonhosted.org/Markdown/install.html)
-- `BeautifulSoup`: extract text from generated html (easiest method to get plain text from markdown). [install](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup)
-- `scikit-learn` and the [scipy stack](https://www.scipy.org/install.html#installing-via-pip) for the machine learning algorithms (topic extraction, tf-idf vectors, etc.). [install](http://scikit-learn.org/stable/install.html)
