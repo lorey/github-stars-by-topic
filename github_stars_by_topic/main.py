@@ -69,7 +69,7 @@ def main() -> None:
         top_feature_names = [feature_names[i] for i in top_feature_indices]
 
         repo_indices_asc = model[:, topic_idx].argsort()
-        repo_indices_desc = flip(repo_indices_asc, 0)  # type: ignore[no-untyped-call]
+        repo_indices_desc = flip(repo_indices_asc, 0)  # type: ignore[var-annotated]
 
         print("Topic #%d:" % topic_idx)
         print(", ".join(top_feature_names))

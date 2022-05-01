@@ -39,7 +39,9 @@ def generate_overview_readme(
     return text
 
 
-def extract_texts_from_repos(repos: PaginatedList[Repository]) -> tuple[list[str], dict[int, Repository]]:
+def extract_texts_from_repos(
+    repos: PaginatedList[Repository],
+) -> tuple[list[str], dict[int, Repository]]:
     readmes: list[str] = []
     readme_to_repo: dict[int, Repository] = {}  # maps readme index to repo
 
