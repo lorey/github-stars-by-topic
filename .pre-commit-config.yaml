@@ -46,7 +46,9 @@ repos:
       - id: mypy
         additional_dependencies:
           - types-setuptools
-          # - ...
+          - types-setuptools
+          - types-beautifulsoup4
+          - types-Markdown
         files: ^github_stars_by_topic/
         args: [--strict]
   - repo: https://github.com/crate-ci/typos
