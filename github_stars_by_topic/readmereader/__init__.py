@@ -4,12 +4,11 @@ import re
 
 import github
 from bs4 import BeautifulSoup
+from .. import CACHE_PATH_READMES
 from markdown import markdown
 
-from main import CACHE_PATH_READMES
 
-
-def fetch_readme(repo):
+def fetch_readme(repo) -> str:
     cache_key = str(repo.id)
     cache_file = CACHE_PATH_READMES + os.sep + cache_key
 
@@ -32,7 +31,7 @@ def fetch_readme(repo):
     return readme.content
 
 
-def markdown_to_text(markdown_string):
+def markdown_to_text(markdown_string: str) -> str:
     # md -> html -> text since BeautifulSoup can extract text cleanly
     html = markdown(markdown_string)
 

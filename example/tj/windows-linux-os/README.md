@@ -266,7 +266,7 @@ also defined by the following keywords: platform, python, mac, tool, program, co
 - [donpark/html2jade](https://github.com/donpark/html2jade)
   Converts HTML to Jade template. Not perfect but useful enough for non-daily conversions.
 - [leereilly/games](https://github.com/leereilly/games)
-  :video_game: A list of popular/awesome videos games, add-ons, maps, etc. hosted on GitHub. Any genre. Any platform. Any engine.
+  :video_game: A list of popular/awesome videos games, add-owns, maps, etc. hosted on GitHub. Any genre. Any platform. Any engine.
 - [google/flatbuffers](https://github.com/google/flatbuffers)
   Memory Efficient Serialization Library
 - [google/godepq](https://github.com/google/godepq)
@@ -600,7 +600,7 @@ also defined by the following keywords: platform, python, mac, tool, program, co
 - [stevedekorte/oia](https://github.com/stevedekorte/oia)
   Javascript port of Io programming language (unfinished)
 - [distracteddev/Soapbox](https://github.com/distracteddev/Soapbox)
-  Personal Blogging paltform, mostly full of hacky experiments and excuses to use new libraries.
+  Personal Blogging platform, mostly full of hacky experiments and excuses to use new libraries.
 - [howeyc/gopass](https://github.com/howeyc/gopass)
   getpasswd for Go
 - [ternjs/tern_for_sublime](https://github.com/ternjs/tern_for_sublime)
@@ -785,7 +785,7 @@ also defined by the following keywords: platform, python, mac, tool, program, co
 - [isRuslan/awesome-elm](https://github.com/isRuslan/awesome-elm)
   A curated list of useful Elm tutorials, libraries and software. Inspired by awesome list. Feel free to contribute. :rocket:
 - [hashicorp/consul-template](https://github.com/hashicorp/consul-template)
-  Template rendering, notifier, and supervisor for @HashiCorp Consul and Vault data
+  Template rendering, notifier, and supervisor for @HashCorp Consul and Vault data
 - [mozilla/metrics-graphics](https://github.com/mozilla/metrics-graphics)
   A library optimized for concise and principled data graphics and layouts.
 - [necolas/normalize.css](https://github.com/necolas/normalize.css)

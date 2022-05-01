@@ -314,7 +314,7 @@ also defined by the following keywords: memory, byte, encoding, op, faster, inte
 - [gocql/gocql](https://github.com/gocql/gocql)
   Package gocql implements a fast and robust Cassandra client for the Go programming language.
 - [leereilly/games](https://github.com/leereilly/games)
-  :video_game: A list of popular/awesome videos games, add-ons, maps, etc. hosted on GitHub. Any genre. Any platform. Any engine.
+  :video_game: A list of popular/awesome videos games, add-owns, maps, etc. hosted on GitHub. Any genre. Any platform. Any engine.
 - [dustin/go-humanize](https://github.com/dustin/go-humanize)
   Go Humans! (formatters for units to human friendly sizes)
 - [tidwall/redcon](https://github.com/tidwall/redcon)
@@ -548,7 +548,7 @@ also defined by the following keywords: memory, byte, encoding, op, faster, inte
 - [divan/depscheck](https://github.com/divan/depscheck)
   Dependency checker for Golang (Go) packages. Prints stats and suggests to remove small LeftPad-like imports if any.
 - [distracteddev/Soapbox](https://github.com/distracteddev/Soapbox)
-  Personal Blogging paltform, mostly full of hacky experiments and excuses to use new libraries.
+  Personal Blogging platform, mostly full of hacky experiments and excuses to use new libraries.
 - [bumptech/stud](https://github.com/bumptech/stud)
   The Scalable TLS Unwrapping Daemon
 - [dgryski/go-bits](https://github.com/dgryski/go-bits)

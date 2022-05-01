@@ -55,7 +55,7 @@ also defined by the following keywords: fast, micro, ember, todomvc, tooling, de
 - [tastejs/todomvc](https://github.com/tastejs/todomvc)
   Helping you select an MV* framework - Todo apps for Backbone.js, Ember.js, AngularJS, and many more
 - [krausest/js-framework-benchmark](https://github.com/krausest/js-framework-benchmark)
-  A comparison of the perfomance of a few popular javascript frameworks
+  A comparison of the performance of a few popular javascript frameworks
 - [nuxt/nuxt.js](https://github.com/nuxt/nuxt.js)
   Framework for server-rendered Vue.js applications.
 - [vuejs/vue](https://github.com/vuejs/vue)

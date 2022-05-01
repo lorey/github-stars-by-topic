@@ -403,7 +403,7 @@ also defined by the following keywords: nil, main, import, println, error, print
 - [tsenart/vegeta](https://github.com/tsenart/vegeta)
   HTTP load testing tool and library. It's over 9000!
 - [hashicorp/consul-template](https://github.com/hashicorp/consul-template)
-  Template rendering, notifier, and supervisor for @HashiCorp Consul and Vault data
+  Template rendering, notifier, and supervisor for @HashCorp Consul and Vault data
 - [bradrydzewski/go.auth](https://github.com/bradrydzewski/go.auth)
   [DEPRECATED] authentication API for Go web applications
 - [nbio/httpcontext](https://github.com/nbio/httpcontext)

@@ -243,7 +243,7 @@ also defined by the following keywords: width, height, png, images, svg, rgb, re
 - [chrislgarry/Apollo-11](https://github.com/chrislgarry/Apollo-11)
   Original Apollo 11 Guidance Computer (AGC) source code for the command and lunar modules.
 - [leereilly/games](https://github.com/leereilly/games)
-  :video_game: A list of popular/awesome videos games, add-ons, maps, etc. hosted on GitHub. Any genre. Any platform. Any engine.
+  :video_game: A list of popular/awesome videos games, add-owns, maps, etc. hosted on GitHub. Any genre. Any platform. Any engine.
 - [mzucker/noteshrink](https://github.com/mzucker/noteshrink)
   Convert scans of handwritten notes to beautiful, compact PDFs
 - [liabru/matter-js](https://github.com/liabru/matter-js)

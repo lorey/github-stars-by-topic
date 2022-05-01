@@ -228,7 +228,7 @@ also defined by the following keywords: store, irc, powerful, key, commands, rep
 - [fogleman/Craft](https://github.com/fogleman/Craft)
   A simple Minecraft clone written in C using modern OpenGL (shaders).
 - [leereilly/games](https://github.com/leereilly/games)
-  :video_game: A list of popular/awesome videos games, add-ons, maps, etc. hosted on GitHub. Any genre. Any platform. Any engine.
+  :video_game: A list of popular/awesome videos games, add-owns, maps, etc. hosted on GitHub. Any genre. Any platform. Any engine.
 - [pquerna/spedye](https://github.com/pquerna/spedye)
 - [circonus-labs/fq](https://github.com/circonus-labs/fq)
   F@#$*&%Q (Message queue that is fast, brokered, in C and gets out of your way)
@@ -261,13 +261,13 @@ also defined by the following keywords: store, irc, powerful, key, commands, rep
 - [c4milo/handlers](https://github.com/c4milo/handlers)
   Go's HTTP handlers I use in my projects
 - [hashicorp/consul-template](https://github.com/hashicorp/consul-template)
-  Template rendering, notifier, and supervisor for @HashiCorp Consul and Vault data
+  Template rendering, notifier, and supervisor for @HashCorp Consul and Vault data
 - [xgrommx/awesome-redux](https://github.com/xgrommx/awesome-redux)
   Awesome list of Redux examples and middlewares
 - [parnurzeal/gorequest](https://github.com/parnurzeal/gorequest)
   GoRequest -- Simplified HTTP client ( inspired by nodejs SuperAgent )
 - [jed/authom](https://github.com/jed/authom)
-  A zero-dependency mutli-service authentication tool for node.js
+  A zero-dependency multi-service authentication tool for node.js
 - [rumpkernel/rumprun](https://github.com/rumpkernel/rumprun)
   The Rumprun unikernel and toolchain for various platforms
 - [erikras/react-redux-universal-hot-example](https://github.com/erikras/react-redux-universal-hot-example)

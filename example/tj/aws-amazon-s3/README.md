@@ -93,7 +93,7 @@ also defined by the following keywords: service, deploy, ec2, credentials, key, 
 - [hashicorp/envconsul](https://github.com/hashicorp/envconsul)
   Read and set environmental variables for processes from Consul.
 - [hashicorp/consul-template](https://github.com/hashicorp/consul-template)
-  Template rendering, notifier, and supervisor for @HashiCorp Consul and Vault data
+  Template rendering, notifier, and supervisor for @HashCorp Consul and Vault data
 - [simov/grant](https://github.com/simov/grant)
   OAuth Middleware for Express, Koa and Hapi
 - [hashicorp/consul](https://github.com/hashicorp/consul)
@@ -107,7 +107,7 @@ also defined by the following keywords: service, deploy, ec2, credentials, key, 
 - [pivotal/projectmonitor](https://github.com/pivotal/projectmonitor)
   Big Visible Chart CI aggregator
 - [jed/authom](https://github.com/jed/authom)
-  A zero-dependency mutli-service authentication tool for node.js
+  A zero-dependency multi-service authentication tool for node.js
 - [lg/murder](https://github.com/lg/murder)
   Large scale server deploys using BitTorrent and the BitTornado library (NOTE: project no longer maintained)
 - [auth0/sharelock](https://github.com/auth0/sharelock)

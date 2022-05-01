@@ -142,7 +142,7 @@ also defined by the following keywords: class, value, object, return, true, meth
 - [ejoebstl/wkhtmltopdf-aas-simple](https://github.com/ejoebstl/wkhtmltopdf-aas-simple)
   Post URL, receive PDF. Build upon node and docker.  🚀
 - [maccyber/micro-bigfive-results](https://github.com/maccyber/micro-bigfive-results)
-  micro webservice that returs bigfive informative test results
+  micro webservice that returns bigfive informative test results
 - [amperser/proselint](https://github.com/amperser/proselint)
   A linter for prose.
 - [ZF-Commons/ZfcFacebook](https://github.com/ZF-Commons/ZfcFacebook)

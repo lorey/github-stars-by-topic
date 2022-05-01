@@ -83,7 +83,7 @@ also defined by the following keywords: promise, detection, usage, performance, 
 - [rwaldron/jquery-hive](https://github.com/rwaldron/jquery-hive)
   jQuery Plugin for creating and managing web workers across implementations. Includes Hive.Pollen.js - the thread-safe utility library for connecting worker threads to the Hive.
 - [mudcube/MIDI.js](https://github.com/mudcube/MIDI.js)
-  :musical_keyboard: Making life easy to create a MIDI-app on the web. Includes a library to program synesthesia into your app for memory recognition or for creating trippy effects. Convert soundfonts for Guitar, Bass, Drums, ect. into code that can be read by the browser. Supports multiple simultaneous instruments and perfect timing.
+  :musical_keyboard: Making life easy to create a MIDI-app on the web. Includes a library to program synesthesia into your app for memory recognition or for creating trippy effects. Convert soundfonts for Guitar, Bass, Drums, etc. into code that can be read by the browser. Supports multiple simultaneous instruments and perfect timing.
 - [tbranyen/diffhtml](https://github.com/tbranyen/diffhtml)
   diffHTML is a library that assists with creating user interfaces using JavaScript
 - [trueadm/t7](https://github.com/trueadm/t7)

@@ -23,7 +23,7 @@ also defined by the following keywords: event, graph, filters, method, dependenc
 - [component/overlay](https://github.com/component/overlay)
   Page overlay component
 - [yields/shortcuts](https://github.com/yields/shortcuts)
-  keyboard shortcuts, similiar to component/events.
+  keyboard shortcuts, similar to component/events.
 - [matthewmueller/debounce](https://github.com/matthewmueller/debounce)
   Underscore's debounce method as a component.
 - [webmodules/gravatar](https://github.com/webmodules/gravatar)

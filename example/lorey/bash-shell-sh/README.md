@@ -148,7 +148,7 @@ also defined by the following keywords: git, os, commands, cd, tool, script, com
 - [lockeyo/Graphcool-Ionic-Instagram-Clone](https://github.com/lockeyo/Graphcool-Ionic-Instagram-Clone)
   A Instagram clone made with Ionic Framework 2 and Graph.cool backend.
 - [resume/resume.github.com](https://github.com/resume/resume.github.com)
-  Resumes generated using the GitHub informations
+  Resumes generated using the GitHub information
 - [barryvdh/laravel-debugbar](https://github.com/barryvdh/laravel-debugbar)
   Laravel Debugbar (Integrates PHP Debug Bar)
 - [realpython/discover-flask](https://github.com/realpython/discover-flask)

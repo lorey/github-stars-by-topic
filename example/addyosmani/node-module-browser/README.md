@@ -133,7 +133,7 @@ also defined by the following keywords: fast, server, client, jpeg, images, imag
 - [PolymerLabs/IMD](https://github.com/PolymerLabs/IMD)
   An AMD-compatible module registry for use with HTML Imports
 - [mudcube/MIDI.js](https://github.com/mudcube/MIDI.js)
-  :musical_keyboard: Making life easy to create a MIDI-app on the web. Includes a library to program synesthesia into your app for memory recognition or for creating trippy effects. Convert soundfonts for Guitar, Bass, Drums, ect. into code that can be read by the browser. Supports multiple simultaneous instruments and perfect timing.
+  :musical_keyboard: Making life easy to create a MIDI-app on the web. Includes a library to program synesthesia into your app for memory recognition or for creating trippy effects. Convert soundfonts for Guitar, Bass, Drums, etc. into code that can be read by the browser. Supports multiple simultaneous instruments and perfect timing.
 - [openstf/stf](https://github.com/openstf/stf)
   Control and manage Android devices from your browser.
 - [nakajima/slidedown](https://github.com/nakajima/slidedown)

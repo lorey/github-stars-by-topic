@@ -101,7 +101,7 @@ also defined by the following keywords: adapter, localstorage, koans, pc9zy3jpch
 - [addyosmani/backbone-fundamentals](https://github.com/addyosmani/backbone-fundamentals)
   :book: A creative-commons book on Backbone.js for beginners and advanced users alike
 - [pkmishra/Dhancha](https://github.com/pkmishra/Dhancha)
-  Skelton to create brunch.io project using twitter bootstrap, backbone.js with dust.js templates
+  Skeleton to create brunch.io project using twitter bootstrap, backbone.js with dust.js templates
 - [iafonov/ha](https://github.com/iafonov/ha)
   Demo app. Backbone.js (client side mvc) + jQuery on client side. Rails 3 in the backend.
 - [addyosmani/spine.todos](https://github.com/addyosmani/spine.todos)

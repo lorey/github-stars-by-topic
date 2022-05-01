@@ -98,7 +98,7 @@ also defined by the following keywords: list, todomvc, meteor, inspired, ios, re
 - [tastejs/todomvc](https://github.com/tastejs/todomvc)
   Helping you select an MV* framework - Todo apps for Backbone.js, Ember.js, AngularJS, and many more
 - [mudcube/MIDI.js](https://github.com/mudcube/MIDI.js)
-  :musical_keyboard: Making life easy to create a MIDI-app on the web. Includes a library to program synesthesia into your app for memory recognition or for creating trippy effects. Convert soundfonts for Guitar, Bass, Drums, ect. into code that can be read by the browser. Supports multiple simultaneous instruments and perfect timing.
+  :musical_keyboard: Making life easy to create a MIDI-app on the web. Includes a library to program synesthesia into your app for memory recognition or for creating trippy effects. Convert soundfonts for Guitar, Bass, Drums, etc. into code that can be read by the browser. Supports multiple simultaneous instruments and perfect timing.
 - [gadfly361/cljs-todomvc](https://github.com/gadfly361/cljs-todomvc)
   List of TodoMVC examples that use Clojurescript (om, om next, reagent, re-frame, rum, quiescent, etc.)
 - [addyosmani/backbone-mobile-search](https://github.com/addyosmani/backbone-mobile-search)

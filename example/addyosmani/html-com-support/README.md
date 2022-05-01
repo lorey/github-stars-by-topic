@@ -116,7 +116,7 @@ also defined by the following keywords: feature, use, css, elements, custom, exa
 - [kripken/emscripten](https://github.com/kripken/emscripten)
   Emscripten: An LLVM-to-JavaScript Compiler
 - [krausest/js-framework-benchmark](https://github.com/krausest/js-framework-benchmark)
-  A comparison of the perfomance of a few popular javascript frameworks
+  A comparison of the performance of a few popular javascript frameworks
 - [PolymerLabs/zero-elements](https://github.com/PolymerLabs/zero-elements)
   Components with no dependencies (not counting CustomElements and HTMLImports)
 - [tldr-pages/tldr](https://github.com/tldr-pages/tldr)

@@ -440,7 +440,7 @@ also defined by the following keywords: shell, cd, bash, repo, directory, commit
 - [attic-labs/noms](https://github.com/attic-labs/noms)
   The versioned, forkable, syncable database
 - [zeit/ms](https://github.com/zeit/ms)
-  Tiny milisecond conversion utility
+  Tiny millisecond conversion utility
 - [zeromq/zyre](https://github.com/zeromq/zyre)
   Zyre - an open-source framework for proximity-based peer-to-peer applications
 - [jackc/sqlfmt](https://github.com/jackc/sqlfmt)
@@ -586,7 +586,7 @@ also defined by the following keywords: shell, cd, bash, repo, directory, commit
 - [c4milo/github-release](https://github.com/c4milo/github-release)
   Simple Github release command line tool
 - [hashicorp/consul-template](https://github.com/hashicorp/consul-template)
-  Template rendering, notifier, and supervisor for @HashiCorp Consul and Vault data
+  Template rendering, notifier, and supervisor for @HashCorp Consul and Vault data
 - [alecthomas/gometalinter](https://github.com/alecthomas/gometalinter)
   Concurrently run Go lint tools and normalise their output
 - [go-llvm/llvm](https://github.com/go-llvm/llvm)

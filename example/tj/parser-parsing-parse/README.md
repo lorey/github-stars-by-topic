@@ -133,7 +133,7 @@ also defined by the following keywords: fast, streaming, json, agent, compiler, 
 - [kangax/fabric.js](https://github.com/kangax/fabric.js)
   Javascript Canvas Library, SVG-to-Canvas (& canvas-to-SVG) Parser
 - [hashicorp/hcl](https://github.com/hashicorp/hcl)
-  HCL is the HashiCorp configuration language.
+  HCL is the HashCorp configuration language.
 - [nothings/single_file_libs](https://github.com/nothings/single_file_libs)
   List of single-file C/C++ libraries.
 - [google/gumbo-parser](https://github.com/google/gumbo-parser)

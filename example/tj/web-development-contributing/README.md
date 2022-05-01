@@ -125,7 +125,7 @@ also defined by the following keywords: issues, issue, pull, repository, org, we
 - [inspircd/inspircd](https://github.com/inspircd/inspircd)
   A modular C++ IRC daemon (ircd).
 - [leereilly/games](https://github.com/leereilly/games)
-  :video_game: A list of popular/awesome videos games, add-ons, maps, etc. hosted on GitHub. Any genre. Any platform. Any engine.
+  :video_game: A list of popular/awesome videos games, add-owns, maps, etc. hosted on GitHub. Any genre. Any platform. Any engine.
 - [nsqio/nsq](https://github.com/nsqio/nsq)
   A realtime distributed messaging platform
 - [deployd/deployd](https://github.com/deployd/deployd)
@@ -238,7 +238,7 @@ also defined by the following keywords: issues, issue, pull, repository, org, we
 - [networkprotocol/netcode.io](https://github.com/networkprotocol/netcode.io)
   A simple protocol for secure client/server connections over UDP
 - [funktionio/funktion-connectors](https://github.com/funktionio/funktion-connectors)
-  funktion is an open source lambda style event driven programming model for Kubernetes
+  function is an open source lambda style event driven programming model for Kubernetes
 - [libgit2/libgit2](https://github.com/libgit2/libgit2)
   The Library
 - [ricallinson/forgery](https://github.com/ricallinson/forgery)
@@ -711,7 +711,7 @@ also defined by the following keywords: issues, issue, pull, repository, org, we
 - [craigw/dns-zonefile](https://github.com/craigw/dns-zonefile)
   Working with zonefiles (RFC 1035 section 5 and RFC 1034 section 3.6.1) in Ruby
 - [bmizerany/sinatra](https://github.com/bmizerany/sinatra)
-  (offically at github.com/sinatra/sinatra) Classy web-development dressed in a DSL
+  (officially at github.com/sinatra/sinatra) Classy web-development dressed in a DSL
 - [s3git/s3git](https://github.com/s3git/s3git)
   s3git: git for Cloud Storage. Distributed Version Control for Data. Create decentralized and versioned repos that scale infinitely to 100s of millions of files. Clone huge PB-scale repos on your local SSD to make changes, commit and push back. Oh yeah, it dedupes too and offers directory versioning.
 - [Voxer/zag](https://github.com/Voxer/zag)
@@ -1023,7 +1023,7 @@ also defined by the following keywords: issues, issue, pull, repository, org, we
 - [valyala/fasthttp](https://github.com/valyala/fasthttp)
   Fast HTTP package for Go. Tuned for high performance. Zero memory allocations in hot paths. Up to 10x faster than net/http
 - [tj/dm-pagination](https://github.com/tj/dm-pagination)
-  Better DataMapper paging solution - framework independant - like will_paginate but better ;)
+  Better DataMapper paging solution - framework independent - like will_paginate but better ;)
 - [cactus/go-statsd-client](https://github.com/cactus/go-statsd-client)
   statsd client for Go
 - [lxc/lxd](https://github.com/lxc/lxd)
@@ -1083,7 +1083,7 @@ also defined by the following keywords: issues, issue, pull, repository, org, we
 - [wallix/awless](https://github.com/wallix/awless)
   A Mighty CLI for AWS
 - [distracteddev/Soapbox](https://github.com/distracteddev/Soapbox)
-  Personal Blogging paltform, mostly full of hacky experiments and excuses to use new libraries.
+  Personal Blogging platform, mostly full of hacky experiments and excuses to use new libraries.
 - [knq/chromedp](https://github.com/knq/chromedp)
   Package chromedp is a faster, simpler way to drive browsers (Chrome, Edge, Safari, Android, etc) without external dependencies (ie, Selenium, PhantomJS, etc) using the Chrome Debugging Protocol.
 - [dtjm/waitgroup.js](https://github.com/dtjm/waitgroup.js)
@@ -1189,7 +1189,7 @@ also defined by the following keywords: issues, issue, pull, repository, org, we
 - [tinylib/msgp](https://github.com/tinylib/msgp)
   A Go code generator for MessagePack / msgpack.org[Go]
 - [hashicorp/hcl](https://github.com/hashicorp/hcl)
-  HCL is the HashiCorp configuration language.
+  HCL is the HashCorp configuration language.
 - [coreos/go-etcd](https://github.com/coreos/go-etcd)
   DEPRECATED - please use the official client at https://github.com/coreos/etcd/tree/master/client
 - [jaz303/boxy](https://github.com/jaz303/boxy)

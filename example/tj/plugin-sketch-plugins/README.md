@@ -238,6 +238,6 @@ also defined by the following keywords: jquery, elements, text, select, folder, 
 - [kkga/spacegray](https://github.com/kkga/spacegray)
   A Hyperminimal UI Theme for Sublime Text
 - [hashicorp/consul-template](https://github.com/hashicorp/consul-template)
-  Template rendering, notifier, and supervisor for @HashiCorp Consul and Vault data
+  Template rendering, notifier, and supervisor for @HashCorp Consul and Vault data
 - [lra/mackup](https://github.com/lra/mackup)
   Keep your application settings in sync (OS X/Linux)

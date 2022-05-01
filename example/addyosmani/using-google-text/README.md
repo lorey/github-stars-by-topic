@@ -55,7 +55,7 @@ also defined by the following keywords: speech, style, eslint, application, lang
 - [substack/node-detective](https://github.com/substack/node-detective)
   Find all calls to require() no matter how crazily nested using a proper walk of the AST
 - [earth2marsh/Ubiquity-Google-Voice](https://github.com/earth2marsh/Ubiquity-Google-Voice)
-  Hightlight any 10-digit phone number and call it with Google Voice. (requires Ubiquity)
+  Highlight any 10-digit phone number and call it with Google Voice. (requires Ubiquity)
 - [mafintosh/torrent-mount](https://github.com/mafintosh/torrent-mount)
   Mount a torrent (or magnet link) as a filesystem in real time using torrent-stream and fuse. AKA MAD SCIENCE!
 - [sirbrad/comcom](https://github.com/sirbrad/comcom)
@@ -93,7 +93,7 @@ also defined by the following keywords: speech, style, eslint, application, lang
 - [atomify/atomify-css](https://github.com/atomify/atomify-css)
   Atomic CSS - Reusable front-end styling using Rework, plugins, and Node's resolve algorithm
 - [pkmishra/Dhancha](https://github.com/pkmishra/Dhancha)
-  Skelton to create brunch.io project using twitter bootstrap, backbone.js with dust.js templates
+  Skeleton to create brunch.io project using twitter bootstrap, backbone.js with dust.js templates
 - [shakyShane/arewereadyformobileyet](https://github.com/shakyShane/arewereadyformobileyet)
   Using Lighthouse to provide automated analysis of what frameworks give you 'out of the box'
 - [louisremi/store.js](https://github.com/louisremi/store.js)

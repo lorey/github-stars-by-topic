@@ -37,7 +37,7 @@ also defined by the following keywords: urls, media, url, returns, networks, www
 - [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
   A curated list of engineering blogs
 - [maccyber/micro-bigfive-results](https://github.com/maccyber/micro-bigfive-results)
-  micro webservice that returs bigfive informative test results
+  micro webservice that returns bigfive informative test results
 - [EbookFoundation/free-programming-books](https://github.com/EbookFoundation/free-programming-books)
   :books: Freely available programming books
 - [nprapps/lunchbox](https://github.com/nprapps/lunchbox)

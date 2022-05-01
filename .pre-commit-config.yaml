@@ -51,11 +51,3 @@ repos:
           - types-Markdown
         files: ^github_stars_by_topic/
         args: [--strict]
-  - repo: https://github.com/crate-ci/typos
-    rev: 'typos-v0.9.0'
-    hooks:
-      - id: typos
-  - repo: https://github.com/codespell-project/codespell
-    rev: v2.1.0
-    hooks:
-      - id: codespell

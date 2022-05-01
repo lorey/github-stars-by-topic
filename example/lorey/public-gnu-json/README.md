@@ -51,7 +51,7 @@ also defined by the following keywords: core, cldr, general, terms, apis, non, d
 - [kamranahmedse/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
   Roadmap to becoming a web developer in 2017
 - [mdn/webextensions-examples](https://github.com/mdn/webextensions-examples)
-  Example Firefox add-ons created using the WebExtensions API
+  Example Firefox add-owns created using the WebExtensions API
 - [derric/cleanthesis](https://github.com/derric/cleanthesis)
   A Clean LaTeX Style for Thesis Documents
 - [honeypotio/githubarchive](https://github.com/honeypotio/githubarchive)

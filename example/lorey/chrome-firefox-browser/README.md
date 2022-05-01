@@ -7,7 +7,7 @@ also defined by the following keywords: extension, webkit, extensions, custom, c
 - [Langhalsdino/Amazon-Smile-Redirect-Chrome-Extension](https://github.com/Langhalsdino/Amazon-Smile-Redirect-Chrome-Extension)
   Amazon.de smiles redirect plugin for Chrome
 - [mdn/webextensions-examples](https://github.com/mdn/webextensions-examples)
-  Example Firefox add-ons created using the WebExtensions API
+  Example Firefox add-owns created using the WebExtensions API
 - [ChromeDevTools/awesome-chrome-devtools](https://github.com/ChromeDevTools/awesome-chrome-devtools)
   Awesome tooling and resources in the Chrome DevTools & DevTools Protocol ecosystem
 - [vladikoff/chromeos-apk](https://github.com/vladikoff/chromeos-apk)

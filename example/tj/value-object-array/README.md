@@ -75,7 +75,7 @@ also defined by the following keywords: return, true, false, returns, values, js
 - [coolony/kiwi](https://github.com/coolony/kiwi)
   Simple yet powerful asynchronous JavaScript template engine based on jQuery Template syntax, usable server-side or client-side.
 - [hashicorp/consul-template](https://github.com/hashicorp/consul-template)
-  Template rendering, notifier, and supervisor for @HashiCorp Consul and Vault data
+  Template rendering, notifier, and supervisor for @HashCorp Consul and Vault data
 - [acdlite/redux-actions](https://github.com/acdlite/redux-actions)
   Flux Standard Action utilities for Redux.
 - [udp/json-parser](https://github.com/udp/json-parser)
@@ -173,7 +173,7 @@ also defined by the following keywords: return, true, false, returns, values, js
 - [pillarjs/cookies](https://github.com/pillarjs/cookies)
   Signed and unsigned cookies based on Keygrip
 - [hashicorp/hcl](https://github.com/hashicorp/hcl)
-  HCL is the HashiCorp configuration language.
+  HCL is the HashCorp configuration language.
 - [wagerfield/parallax](https://github.com/wagerfield/parallax)
   Parallax Engine that reacts to the orientation of a smart device
 - [dave/jennifer](https://github.com/dave/jennifer)
@@ -614,7 +614,7 @@ also defined by the following keywords: return, true, false, returns, values, js
 - [chjj/liquor](https://github.com/chjj/liquor)
   A templating engine minus the code.
 - [zeit/ms](https://github.com/zeit/ms)
-  Tiny milisecond conversion utility
+  Tiny millisecond conversion utility
 - [go-martini/martini](https://github.com/go-martini/martini)
   Classy web framework for Go
 - [andris9/stylus-sprite](https://github.com/andris9/stylus-sprite)
@@ -734,7 +734,7 @@ also defined by the following keywords: return, true, false, returns, values, js
 - [wankdanker/node-odbc](https://github.com/wankdanker/node-odbc)
   ODBC bindings for node
 - [jed/authom](https://github.com/jed/authom)
-  A zero-dependency mutli-service authentication tool for node.js
+  A zero-dependency multi-service authentication tool for node.js
 - [moriyoshi/kmyacc-forked](https://github.com/moriyoshi/kmyacc-forked)
   A fork of kmyacc, with some essential patches applied
 - [google/grumpy](https://github.com/google/grumpy)

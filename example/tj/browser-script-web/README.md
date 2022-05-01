@@ -150,7 +150,7 @@ also defined by the following keywords: cross, browsers, ui, chrome, style, dom,
 - [cocos2d/cocos2d-html5](https://github.com/cocos2d/cocos2d-html5)
   cocos2d for Web Browsers. Built using JavaScript
 - [alexgorbatchev/node-crc](https://github.com/alexgorbatchev/node-crc)
-  Verious CRC for node.js and browser
+  Various CRC for node.js and browser
 - [scottgonzalez/node-browserstack](https://github.com/scottgonzalez/node-browserstack)
   node.js client for BrowserStack
 - [ariya/esmorph](https://github.com/ariya/esmorph)
@@ -251,7 +251,7 @@ also defined by the following keywords: cross, browsers, ui, chrome, style, dom,
 - [jwagner/smartcrop.js](https://github.com/jwagner/smartcrop.js)
   Content aware image cropping
 - [leereilly/games](https://github.com/leereilly/games)
-  :video_game: A list of popular/awesome videos games, add-ons, maps, etc. hosted on GitHub. Any genre. Any platform. Any engine.
+  :video_game: A list of popular/awesome videos games, add-owns, maps, etc. hosted on GitHub. Any genre. Any platform. Any engine.
 - [axyz/perfect-layout](https://github.com/axyz/perfect-layout)
   Image layout generator based on linear partitioning
 - [ccampbell/rainbow](https://github.com/ccampbell/rainbow)
@@ -337,7 +337,7 @@ also defined by the following keywords: cross, browsers, ui, chrome, style, dom,
 - [cypher/html5-presentation](https://github.com/cypher/html5-presentation)
   HTML5: What's new? What's changed?
 - [zeit/ms](https://github.com/zeit/ms)
-  Tiny milisecond conversion utility
+  Tiny millisecond conversion utility
 - [electerious/formbase](https://github.com/electerious/formbase)
   Better default styles for common input elements.
 - [fabianfiorotto/quick-query](https://github.com/fabianfiorotto/quick-query)

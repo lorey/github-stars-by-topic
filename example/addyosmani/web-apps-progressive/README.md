@@ -126,7 +126,7 @@ also defined by the following keywords: resources, developers, format, proxy, gu
 - [vuejs/vue](https://github.com/vuejs/vue)
   A progressive, incrementally-adoptable JavaScript framework for building UI on the web.
 - [mudcube/MIDI.js](https://github.com/mudcube/MIDI.js)
-  :musical_keyboard: Making life easy to create a MIDI-app on the web. Includes a library to program synesthesia into your app for memory recognition or for creating trippy effects. Convert soundfonts for Guitar, Bass, Drums, ect. into code that can be read by the browser. Supports multiple simultaneous instruments and perfect timing.
+  :musical_keyboard: Making life easy to create a MIDI-app on the web. Includes a library to program synesthesia into your app for memory recognition or for creating trippy effects. Convert soundfonts for Guitar, Bass, Drums, etc. into code that can be read by the browser. Supports multiple simultaneous instruments and perfect timing.
 - [peol/960gridder](https://github.com/peol/960gridder)
   960 Gridder is an excellent tool for any web developer/designer that wants to easily align, match and lay out websites. NOTE: This repo is no longer maintained. If it works, it works but it's years old and there's probably better ones out there by now.
 - [h5bp/html5-boilerplate](https://github.com/h5bp/html5-boilerplate)

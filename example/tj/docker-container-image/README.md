@@ -145,7 +145,7 @@ also defined by the following keywords: containers, registry, images, latest, ta
 - [scylladb/seastar](https://github.com/scylladb/seastar)
   High performance server-side application framework
 - [hashicorp/consul-template](https://github.com/hashicorp/consul-template)
-  Template rendering, notifier, and supervisor for @HashiCorp Consul and Vault data
+  Template rendering, notifier, and supervisor for @HashCorp Consul and Vault data
 - [Visu4link/pastec](https://github.com/Visu4link/pastec)
   Image recognition open source index and search engine
 - [open-guides/og-aws](https://github.com/open-guides/og-aws)

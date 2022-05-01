@@ -31,7 +31,7 @@ also defined by the following keywords: cv, pdf, fonts, header, paper, section, 
 - [jsonresume/resume-cli](https://github.com/jsonresume/resume-cli)
   Cli tool to easily setup a new resume 📑
 - [resume/resume.github.com](https://github.com/resume/resume.github.com)
-  Resumes generated using the GitHub informations
+  Resumes generated using the GitHub information
 - [derric/cleanthesis](https://github.com/derric/cleanthesis)
   A Clean LaTeX Style for Thesis Documents
 - [jgm/pandoc](https://github.com/jgm/pandoc)

@@ -2,19 +2,17 @@ import datetime
 import getpass
 import logging
 import os
-import re
 
-import numpy
+from .utils import extract_texts_from_repos, generate_overview_readme
+
 import github
+import numpy
 from sklearn.decomposition import NMF
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-import readmereader
-
-CACHE_PATH_READMES = "cache"
 
 
-def main():
+def main() -> None:
     number_of_topics = 25
 
     username = input("Your Github Username: ")
@@ -31,7 +29,7 @@ def main():
 
     # setup output directory
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M")
-    output_directory = "topics_%s_%s" % (target_username, timestamp)
+    output_directory = "topics_{}_{}".format(target_username, timestamp)
     os.mkdir(output_directory)
 
     logging.info("extracts texts for repos (readmes, etc.)")
@@ -100,7 +98,7 @@ def main():
             for i in repo_indices_desc
             if model[i, topic_idx] > 0.1 * max_weight
         ]:
-            topic_readme_text += "- [%s](%s)\n" % (repo.full_name, repo.html_url)
+            topic_readme_text += "- [{}]({})\n".format(repo.full_name, repo.html_url)
             if repo.description:
                 topic_readme_text += "  %s\n" % repo.description
 
@@ -108,67 +106,6 @@ def main():
         with open(topic_path + os.sep + "README.md", "w") as file:
             file.write(topic_readme_text)
         print()
-
-
-def generate_overview_readme(decomposition, feature_names, username):
-    text = "# %s's stars by topic\n" % username
-    text += "\n"
-    text += (
-        "This is a list of topics covered by the starred repositories of %s." % username
-    )
-    text += "\n"
-
-    topic_list = []
-    for topic_idx, topic in enumerate(decomposition.components_):
-        top_feature_indices = topic.argsort()[:-11:-1]
-        top_feature_names = [feature_names[i] for i in top_feature_indices]
-
-        topic_name = ", ".join(top_feature_names[0:3])
-
-        topic_directory_name = "-".join(top_feature_names[0:3])
-        topic_link = topic_directory_name + os.sep + "README.md"
-
-        topic_list_item = "- [%s](%s)" % (topic_name, topic_link)
-        topic_list.append(topic_list_item)
-
-    topic_list.sort()  # sort alphabetically
-    text += "\n".join(topic_list)
-
-    return text
-
-
-def extract_texts_from_repos(repos):
-    readmes = []
-    readme_to_repo = {}  # maps readme index to repo
-
-    for repo in repos:
-        full_repo_text = get_text_for_repo(repo)
-        readme_to_repo[len(readmes)] = repo
-        readmes.append(full_repo_text)
-
-    return readmes, readme_to_repo
-
-
-def get_text_for_repo(repo):
-    repo_login, repo_name = repo.full_name.split(
-        "/"
-    )  # use full name to infer user login
-
-    # readme = readmereader.fetch_readme(user_login, repo_name, repo.id)
-    readme = readmereader.fetch_readme(repo)
-    readme_text = readmereader.markdown_to_text(readme)
-
-    repo_name_clean = re.sub(r"[^A-z]+", " ", repo_name)
-
-    texts = [
-        str(repo.description),
-        str(repo.description),
-        str(repo.description),  # use description 3x to increase weight
-        str(repo.language),
-        readme_text,
-        repo_name_clean,
-    ]
-    return " ".join(texts)
 
 
 if __name__ == "__main__":

@@ -163,7 +163,7 @@ also defined by the following keywords: request, connections, send, response, lo
 - [boot2docker/boot2docker](https://github.com/boot2docker/boot2docker)
   Lightweight Linux for Docker
 - [hashicorp/consul-template](https://github.com/hashicorp/consul-template)
-  Template rendering, notifier, and supervisor for @HashiCorp Consul and Vault data
+  Template rendering, notifier, and supervisor for @HashCorp Consul and Vault data
 - [fabiolb/fabio](https://github.com/fabiolb/fabio)
   A fast, modern, zero-conf load balancing HTTP(S) router for deploying microservices managed by consul.
 - [luigirizzo/netmap](https://github.com/luigirizzo/netmap)
@@ -227,7 +227,7 @@ also defined by the following keywords: request, connections, send, response, lo
 - [hashicorp/yamux](https://github.com/hashicorp/yamux)
   Golang connection multiplexing library
 - [jed/authom](https://github.com/jed/authom)
-  A zero-dependency mutli-service authentication tool for node.js
+  A zero-dependency multi-service authentication tool for node.js
 - [mnot/htracr](https://github.com/mnot/htracr)
   HTTP sniffing and low-level visualisation
 - [gliderlabs/logspout](https://github.com/gliderlabs/logspout)
@@ -551,7 +551,7 @@ also defined by the following keywords: request, connections, send, response, lo
 - [base698/Informant](https://github.com/base698/Informant)
   A node based server monitor to get real-time status of your ops...
 - [funktionio/funktion-connectors](https://github.com/funktionio/funktion-connectors)
-  funktion is an open source lambda style event driven programming model for Kubernetes
+  function is an open source lambda style event driven programming model for Kubernetes
 - [opentracing/opentracing-go](https://github.com/opentracing/opentracing-go)
   OpenTracing API for Go
 - [coreos/etcd](https://github.com/coreos/etcd)

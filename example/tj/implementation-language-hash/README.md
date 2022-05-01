@@ -111,7 +111,7 @@ also defined by the following keywords: functions, programming, pure, compiler, 
 - [tristandunn/webkit-server](https://github.com/tristandunn/webkit-server)
   A standalone version of the WebKit server in capybara-webkit. (No longer maintained.)
 - [alexgorbatchev/node-crc](https://github.com/alexgorbatchev/node-crc)
-  Verious CRC for node.js and browser
+  Various CRC for node.js and browser
 - [dop251/goja](https://github.com/dop251/goja)
   ECMAScript 5.1(+) implementation written in Go
 - [tj/node-pwd](https://github.com/tj/node-pwd)
@@ -202,7 +202,7 @@ also defined by the following keywords: functions, programming, pure, compiler, 
 - [mruby/mruby](https://github.com/mruby/mruby)
   Lightweight Ruby
 - [leereilly/games](https://github.com/leereilly/games)
-  :video_game: A list of popular/awesome videos games, add-ons, maps, etc. hosted on GitHub. Any genre. Any platform. Any engine.
+  :video_game: A list of popular/awesome videos games, add-owns, maps, etc. hosted on GitHub. Any genre. Any platform. Any engine.
 - [andrewstuart/limio](https://github.com/andrewstuart/limio)
   A rate limiting library for Go centered around intuitive and idiomatic interfaces.
 - [mandalore-io/disruptor](https://github.com/mandalore-io/disruptor)

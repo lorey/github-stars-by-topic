@@ -57,7 +57,7 @@ also defined by the following keywords: connect, koa, application, router, res, 
 - [dandean/express-form](https://github.com/dandean/express-form)
   Form validation and data filtering for Express
 - [jed/authom](https://github.com/jed/authom)
-  A zero-dependency mutli-service authentication tool for node.js
+  A zero-dependency multi-service authentication tool for node.js
 - [segmentio/koa-params](https://github.com/segmentio/koa-params)
   Add express style params support to koa
 - [jaredhanson/junction](https://github.com/jaredhanson/junction)

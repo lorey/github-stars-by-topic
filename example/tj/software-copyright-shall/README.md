@@ -35,7 +35,7 @@ also defined by the following keywords: permission, notice, copies, including, c
 - [dominikh/go-tools](https://github.com/dominikh/go-tools)
   A collection of tools and libraries for working with Go code, including linters and static analysis
 - [alexgorbatchev/node-crc](https://github.com/alexgorbatchev/node-crc)
-  Verious CRC for node.js and browser
+  Various CRC for node.js and browser
 - [drnic/javascript-node.tmbundle](https://github.com/drnic/javascript-node.tmbundle)
   TextMate bundle for node.js
 - [rauchg/spot](https://github.com/rauchg/spot)
@@ -211,7 +211,7 @@ also defined by the following keywords: permission, notice, copies, including, c
 - [drudge/choc-config](https://github.com/drudge/choc-config)
   My Chocolat Config (Application Support)
 - [jed/authom](https://github.com/jed/authom)
-  A zero-dependency mutli-service authentication tool for node.js
+  A zero-dependency multi-service authentication tool for node.js
 - [troolee/gridstack.js](https://github.com/troolee/gridstack.js)
   gridstack.js is a jQuery plugin for widget layout
 - [Netflix/atlas](https://github.com/Netflix/atlas)

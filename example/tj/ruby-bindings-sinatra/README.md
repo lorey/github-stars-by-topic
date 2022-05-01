@@ -61,7 +61,7 @@ also defined by the following keywords: syntax, framework, session, rack, manage
 - [schacon/libgit](https://github.com/schacon/libgit)
   IGNORE THIS! - use libgit2
 - [tj/dm-pagination](https://github.com/tj/dm-pagination)
-  Better DataMapper paging solution - framework independant - like will_paginate but better ;)
+  Better DataMapper paging solution - framework independent - like will_paginate but better ;)
 - [tarcieri/reia](https://github.com/tarcieri/reia)
   Ruby-like hybrid OOP/functional programming language for BEAM, the Erlang VM
 - [davidfstr/rdiscount](https://github.com/davidfstr/rdiscount)
@@ -97,7 +97,7 @@ also defined by the following keywords: syntax, framework, session, rack, manage
 - [rtomayko/rack-cache](https://github.com/rtomayko/rack-cache)
   Real HTTP Caching for Ruby Web Apps
 - [bmizerany/sinatra](https://github.com/bmizerany/sinatra)
-  (offically at github.com/sinatra/sinatra) Classy web-development dressed in a DSL
+  (officially at github.com/sinatra/sinatra) Classy web-development dressed in a DSL
 - [nesquena/sinatra_more](https://github.com/nesquena/sinatra_more)
   Generators, helpers and extensions enabling complex sinatra apps
 - [yanirs/established-remote](https://github.com/yanirs/established-remote)
@@ -137,7 +137,7 @@ also defined by the following keywords: syntax, framework, session, rack, manage
 - [markbates/genosaurus](https://github.com/markbates/genosaurus)
   A simple and easy to use generator system for Ruby
 - [hashicorp/hcl](https://github.com/hashicorp/hcl)
-  HCL is the HashiCorp configuration language.
+  HCL is the HashCorp configuration language.
 - [pugjs/pug](https://github.com/pugjs/pug)
   Pug – robust, elegant, feature rich template engine for Node.js
 - [tj/pomo](https://github.com/tj/pomo)
@@ -175,7 +175,7 @@ also defined by the following keywords: syntax, framework, session, rack, manage
 - [samg/timetrap](https://github.com/samg/timetrap)
   Simple command line timetracker
 - [leereilly/games](https://github.com/leereilly/games)
-  :video_game: A list of popular/awesome videos games, add-ons, maps, etc. hosted on GitHub. Any genre. Any platform. Any engine.
+  :video_game: A list of popular/awesome videos games, add-owns, maps, etc. hosted on GitHub. Any genre. Any platform. Any engine.
 - [jingweno/ccat](https://github.com/jingweno/ccat)
   Colorizing `cat`
 - [rumpkernel/rumprun](https://github.com/rumpkernel/rumprun)

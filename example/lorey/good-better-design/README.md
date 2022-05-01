@@ -29,7 +29,7 @@ also defined by the following keywords: team, developer, product, programming, e
 - [h5bp/Front-end-Developer-Interview-Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions)
   A list of helpful front-end related questions you can use to interview potential candidates, test yourself or completely ignore.
 - [maccyber/micro-bigfive-results](https://github.com/maccyber/micro-bigfive-results)
-  micro webservice that returs bigfive informative test results
+  micro webservice that returns bigfive informative test results
 - [forter/security-101-for-saas-startups](https://github.com/forter/security-101-for-saas-startups)
   security tips for startups
 - [tastejs/todomvc](https://github.com/tastejs/todomvc)
