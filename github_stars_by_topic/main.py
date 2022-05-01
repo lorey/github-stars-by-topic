@@ -63,7 +63,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
-    a_user, a_pass, a_target = args.username, args.password, args.target_user
+    a_user, a_pass, a_target = args.username, args.password, args.target_username
     number_of_topics = 25
 
     username = input("Your Github Username: ") if a_user is None else a_user
