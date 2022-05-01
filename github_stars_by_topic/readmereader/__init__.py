@@ -15,7 +15,7 @@ def fetch_readme(repo):
 
     # check if file is cached
     if os.path.isfile(cache_file):
-        with open(cache_file, 'r') as file:
+        with open(cache_file, "r") as file:
             return file.read()
 
     # create cache folder
@@ -26,8 +26,8 @@ def fetch_readme(repo):
         readme = repo.get_readme()
     except github.GithubException:
         # Readme wasn't found
-        logging.warning('no readme found for: ' + repo.full_name)
-        return ''
+        logging.warning("no readme found for: " + repo.full_name)
+        return ""
 
     return readme.content
 
@@ -37,11 +37,11 @@ def markdown_to_text(markdown_string):
     html = markdown(markdown_string)
 
     # remove code snippets
-    html = re.sub(r'<pre>(.*?)</pre>', ' ', html)
-    html = re.sub(r'<code>(.*?)</code >', ' ', html)
+    html = re.sub(r"<pre>(.*?)</pre>", " ", html)
+    html = re.sub(r"<code>(.*?)</code >", " ", html)
 
     # extract text
     soup = BeautifulSoup(html, "html.parser")
-    text = ''.join(soup.findAll(text=True))
+    text = "".join(soup.findAll(text=True))
 
     return text
