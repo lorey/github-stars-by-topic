@@ -1,28 +1,82 @@
 from __future__ import annotations
 
+import argparse
 import datetime
 import getpass
 import logging
 import os
+from shutil import get_terminal_size
 
-import github
+from github import Github
 from numpy import flip
 from sklearn.decomposition import NMF  # type: ignore[import]
 from sklearn.feature_extraction.text import TfidfVectorizer  # type: ignore[import]
 
+from . import __version__
 from .utils import extract_texts_from_repos, generate_overview_readme
 
 
+class HelpFormatter(
+    argparse.ArgumentDefaultsHelpFormatter, argparse.RawDescriptionHelpFormatter
+):
+    pass
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        formatter_class=(
+            lambda prog: HelpFormatter(
+                prog,
+                **{
+                    "width": get_terminal_size(fallback=(120, 50)).columns,
+                    "max_help_position": 25,
+                },
+            )
+        ),
+        description="Generate a list of your GitHub stars by topic - automatically!",
+    )
+    parser.add_argument(
+        "-t",
+        "--target-username",
+        dest="target_username",
+        type=str,
+        metavar="ID",
+        help="gh username to search",
+    )
+    parser.add_argument(
+        "-u",
+        "--username",
+        metavar="ID",
+        type=str,
+        help="gh username to login",
+    )
+    parser.add_argument(
+        "-p",
+        "--password",
+        type=str,
+        help="gh password to login",
+    )
+    parser.add_argument("-V", "--version", action="version", version=__version__)
+
+    return parser.parse_args()
+
+
 def main() -> None:
+    args = parse_args()
+    a_user, a_pass, a_target = args.username, args.password, args.target_user
     number_of_topics = 25
 
-    username = input("Your Github Username: ")
-    password = getpass.getpass("Your Password (not stored in any way): ")
+    username = input("Your Github Username: ") if a_user is None else a_user
+    password = (
+        getpass.getpass("Your Password (not stored in any way): ")
+        if a_pass is None
+        else a_pass
+    )
 
-    g = github.Github(username, password)
+    g = Github(username, password)
     g.per_page = 250  # maximum allowed value
 
-    target_username = input("User to analyze: ")
+    target_username = input("User to analyze: ") if a_target is None else a_target
 
     logging.info("fetching stars")
     target_user = g.get_user(target_username)
