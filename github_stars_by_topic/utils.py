@@ -13,15 +13,13 @@ from .readmereader import fetch_readme, markdown_to_text
 def generate_overview_readme(
     decomposition: NMF, feature_names: list[str], username: str
 ) -> str:
-    text = "# %s's stars by topic\n" % username
-    text += "\n"
+    text = f"# {username}'s stars by topic\n\n"
     text += (
-        "This is a list of topics covered by the starred repositories of %s." % username
+        f"This is a list of topics covered by the starred repositories of {username}.\n"
     )
-    text += "\n"
 
     topic_list = []
-    for topic_idx, topic in enumerate(decomposition.components_):
+    for topic in decomposition.components_:
         top_feature_indices = topic.argsort()[:-11:-1]
         top_feature_names = [feature_names[i] for i in top_feature_indices]
 
@@ -30,7 +28,7 @@ def generate_overview_readme(
         topic_directory_name = "-".join(top_feature_names[0:3])
         topic_link = topic_directory_name + os.sep + "README.md"
 
-        topic_list_item = "- [{}]({})".format(topic_name, topic_link)
+        topic_list_item = f"- [{topic_name}]({topic_link})"
         topic_list.append(topic_list_item)
 
     topic_list.sort()  # sort alphabetically

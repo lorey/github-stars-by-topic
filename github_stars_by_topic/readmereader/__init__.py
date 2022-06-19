@@ -13,8 +13,7 @@ from .. import CACHE_PATH_READMES
 
 
 def fetch_readme(repo: Repository) -> str:
-    cache_key = str(repo.id)
-    cache_file = CACHE_PATH_READMES + os.sep + cache_key
+    cache_file = f"{CACHE_PATH_READMES}{os.sep}{repo.id}"
 
     # check if file is cached
     if os.path.isfile(cache_file):
@@ -29,7 +28,7 @@ def fetch_readme(repo: Repository) -> str:
         readme = repo.get_readme()
     except GithubException:
         # Readme wasn't found
-        logging.warning("no readme found for: " + repo.full_name)
+        logging.warning(f"no readme found for: {repo.full_name}")
         return ""
 
     return str(readme.content)
@@ -41,7 +40,7 @@ def markdown_to_text(markdown_string: str) -> str:
 
     # remove code snippets
     html = re.sub(r"<pre>(.*?)</pre>", " ", html)
-    html = re.sub(r"<code>(.*?)</code >", " ", html)
+    html = re.sub(r"<code>(.*?)</code>", " ", html)
 
     # extract text
     soup = BeautifulSoup(html, "html.parser")

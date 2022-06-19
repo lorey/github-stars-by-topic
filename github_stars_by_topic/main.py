@@ -85,7 +85,7 @@ def _main() -> None:
 
     # setup output directory
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M")
-    output_directory = "topics_{}_{}".format(target_username, timestamp)
+    output_directory = f"topics_{target_username}_{timestamp}"
     os.mkdir(output_directory)
 
     logging.info("extracts texts for repos (readmes, etc.)")
@@ -113,7 +113,7 @@ def _main() -> None:
     )
 
     # README to get displayed by github when opening directory
-    overview_filename = output_directory + os.sep + "README.md"
+    overview_filename = f"{output_directory}{os.sep}README.md"
     with open(overview_filename, "w") as overview_file:
         overview_file.write(overview_text)
 
@@ -126,7 +126,7 @@ def _main() -> None:
         repo_indices_asc = model[:, topic_idx].argsort()
         repo_indices_desc = flip(repo_indices_asc, 0)
 
-        print("Topic #%d:" % topic_idx)
+        print(f"Topic #{topic_idx}:")
         print(", ".join(top_feature_names))
 
         # output repos
@@ -136,18 +136,17 @@ def _main() -> None:
             if weight > 0.05 * max_weight:
                 print(text_index_to_repo[i], weight)
 
+        top_3_names, top_n_names = top_feature_names[0:3], top_feature_names[3:]
+
         # create topic directory
-        topic_directory_name = "-".join(top_feature_names[0:3])
-        topic_path = output_directory + os.sep + topic_directory_name
+        topic_directory_name = "-".join(top_3_names)
+        topic_path = f"{output_directory}{os.sep}{topic_directory_name}"
         os.mkdir(topic_path)
 
         # generate readme
-        topic_readme_text = "# Repositories defined by: %s\n" % ", ".join(
-            top_feature_names[0:3]
-        )
-        topic_readme_text += "\n"
-        topic_readme_text += "also defined by the following keywords: %s\n" % ", ".join(
-            top_feature_names[3:]
+        topic_readme_text = f"# Repositories defined by: {', '.join(top_3_names)}\n\n"
+        topic_readme_text += (
+            f"also defined by the following keywords: {', '.join(top_n_names)}\n"
         )
         topic_readme_text += "\n"
         for repo in [
@@ -155,12 +154,12 @@ def _main() -> None:
             for i in repo_indices_desc
             if model[i, topic_idx] > 0.1 * max_weight
         ]:
-            topic_readme_text += "- [{}]({})\n".format(repo.full_name, repo.html_url)
+            topic_readme_text += f"- [{repo.full_name}]({repo.html_url})\n"
             if repo.description:
-                topic_readme_text += "  %s\n" % repo.description
+                topic_readme_text += f"  {repo.description}\n"
 
         # write readme
-        with open(topic_path + os.sep + "README.md", "w") as file:
+        with open(f"{topic_path}{os.sep}README.md", "w") as file:
             file.write(topic_readme_text)
         print()
 
