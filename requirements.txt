@@ -6,7 +6,7 @@ Deprecated==1.2.10
 idna==2.10
 joblib==0.16.0
 Markdown==3.2.2
-numpy==1.19.0
+numpy==1.22.0
 PyGithub==1.51
 PyJWT==1.7.1
 requests==2.24.0
